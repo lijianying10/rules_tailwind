@@ -1,1 +1,1 @@
-exports_files(["cli.js"])
+exports_files(["cli.js","package-lock.json","package.json"])
