@@ -73,7 +73,7 @@ def tailwind_runner(runner_name, css, cfg, out):
     nodejs_binary(
         name = runner_name,
         data = input_list,
-        entry_point = "//:cli.js",
+        entry_point = "@rules_tailwind//:cli.js",
         templated_args = input_args,
     )
     pass
