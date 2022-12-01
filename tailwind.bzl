@@ -7,6 +7,11 @@ def _tailwind_run_impl(ctx):
         ctx.file.css,
         ctx.file.cfg,
     ]
+
+    for i in ctx.attr.data:
+        for f in i.files.to_list():
+            input_list.append(f)
+
     input_args = [
         "-i",
         ctx.file.css.path,
@@ -39,6 +44,10 @@ tailwind_run = rule(
         "cfg": attr.label(
             doc = "tailwind config file",
             allow_single_file = [".config.js"],
+        ),
+        "data": attr.label_list(
+            doc = "input the html need to be parse",
+            allow_files = [".html", ".js"]
         ),
         "out": attr.output(mandatory = True),
         "runner": attr.label(
