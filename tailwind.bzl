@@ -59,7 +59,7 @@ tailwind_run = rule(
     },
 )
 
-def tailwind_runner(runner_name, css, cfg, out):
+def tailwind_runner(runner_name, css, cfg, out, data):
     input_list = [
         css,
         cfg,
@@ -70,7 +70,7 @@ def tailwind_runner(runner_name, css, cfg, out):
         "@npm//@tailwindcss/typography",
         "@npm//autoprefixer",
         "@npm//tailwindcss",
-    ]
+    ] + data
     input_args = [
         "-i",
         css,

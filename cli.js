@@ -1,3 +1,6 @@
+// proc=require("process")
+// console.log("----->",proc.cwd())
+
 let Module = require('module')
 let origRequire = Module.prototype.require
 
