@@ -47,7 +47,7 @@ tailwind_run = rule(
         ),
         "data": attr.label_list(
             doc = "input the html need to be parse",
-            allow_files = [".html", ".js"]
+            allow_files = [".html", ".js", ".css"]
         ),
         "out": attr.output(mandatory = True),
         "runner": attr.label(
