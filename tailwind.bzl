@@ -1,6 +1,6 @@
 "tailwind for build binary and run"
 
-load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+load("@rules_nodejs//:index.bzl", "nodejs_binary")
 
 def _tailwind_run_impl(ctx):
     input_list = [
