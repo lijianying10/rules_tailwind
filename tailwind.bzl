@@ -1,6 +1,6 @@
 "tailwind for build binary and run"
 
-load("@rules_nodejs//:index.bzl", "nodejs_binary")
+load("@aspect_rules_js//js:defs.bzl", "js_binary")
 
 def _tailwind_run_impl(ctx):
     input_list = [
@@ -79,10 +79,10 @@ def tailwind_runner(runner_name, css, cfg, out, data):
         "-o",
         out,
     ]
-    nodejs_binary(
+    js_binary(
         name = runner_name,
         data = input_list,
         entry_point = "@rules_tailwind//:cli.js",
-        templated_args = input_args,
+        fixed_args = input_args,
     )
     pass
