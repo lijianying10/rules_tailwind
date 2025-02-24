@@ -1,14 +1,6 @@
 load("@npm//:defs.bzl", "npm_link_all_packages")
 load("@aspect_rules_js//js:defs.bzl", "js_library", "js_binary")
 
-# js_library(
-#     name = "libcli",
-#     srcs = [
-#         "cli.js",
-#     ],
-#      visibility = ["//visibility:public"],
-# )
-
 npm_link_all_packages(name = "node_modules")
 
 js_binary(
@@ -24,7 +16,6 @@ js_binary(
         "//:node_modules/postcss",
     ],
     entry_point = "@rules_tailwind//:cli.js",
-    # fixed_args = input_args,
     visibility = ["//visibility:public"],
 )
 exports_files(["cli.js","package-lock.json","package.json"])
