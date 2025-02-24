@@ -7,14 +7,15 @@ bazel_dep(name = "aspect_rules_js", version = "2.2.0")
 # Optionally you can pin a different node version:
 bazel_dep(name = "rules_nodejs", version = "6.3.3")
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node", dev_dependency = True)
-node.toolchain(node_version = "22.14.0")
+node.toolchain(node_version = "22.13.0")
 #################################
 
 npm = use_extension("@aspect_rules_js//npm:extensions.bzl", "npm", dev_dependency = True)
 
 npm.npm_translate_lock(
     name = "npm",
-    npm_package_lock = "//:package-lock.json",
+    # npm_package_lock = "//:package-lock.json",
+    pnpm_lock = "//:pnpm-lock.yaml",
     verify_node_modules_ignored = "//:.bazelignore",
 )
 

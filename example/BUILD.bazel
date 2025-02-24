@@ -1,0 +1,32 @@
+load("//:tailwind.bzl", "tailwind_runner")
+
+# name = "style"
+
+# runner_name = "%s.tailwindcss_runner" % name
+
+filegroup(
+    name = "html_files",
+    srcs = glob(["*.html"]),
+)
+
+dep_data = [
+    "//example:html_files",
+]
+
+# tailwind_runner(
+#     out = "index.css",
+#     cfg = "//example:tailwind.config.js",
+#     css = "//example:main.css",
+#     data = dep_data,
+#     runner_name = runner_name,
+# )
+
+tailwind_runner(
+    runner_name = "style",
+    css = "//example:main.css",
+    cfg = "//example:tailwind.config.js",
+    out = "index.css",
+    # runner = runner_name,
+    data = dep_data,
+    # visibility = ["//visibility:public"],
+)
