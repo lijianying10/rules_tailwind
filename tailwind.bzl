@@ -69,8 +69,11 @@ def tailwind_runner(runner_name, css, cfg, out, data):
         cfg,
     ] + data
     input_args = [
+        "-i",
         csslocation,
+        "-c",
         cfglocation,
+        "-o",
         outlocation,
     ]
     js_run_binary(

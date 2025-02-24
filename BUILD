@@ -19,8 +19,6 @@ js_binary(
         "//:node_modules/@tailwindcss/forms",
         "//:node_modules/@tailwindcss/line-clamp",
         "//:node_modules/@tailwindcss/typography",
-        "//:node_modules/@tailwindcss/cli",
-        "//:node_modules/@tailwindcss/postcss",
         "//:node_modules/autoprefixer",
         "//:node_modules/tailwindcss",
         "//:node_modules/postcss",
