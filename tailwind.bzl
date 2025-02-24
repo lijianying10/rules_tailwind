@@ -26,6 +26,6 @@ def tailwind_runner(runner_name, css, cfg, out, data):
         outs = [out],
         args = input_args,
         log_level = "debug",
-        tool = "//:tailwind_gen",
+        tool = "@rules_tailwind//:tailwind_gen",
     )
     pass
