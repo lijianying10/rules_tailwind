@@ -3,7 +3,6 @@
 load("@aspect_rules_js//js:defs.bzl", "js_binary", "js_run_binary")
 
 def tailwind_runner(runner_name, css, cfg, out, data):
-    print("debug", data)
     csslocation = "$(execpath %s)" % css
     cfglocation = "$(execpath %s)" % cfg
     outlocation = "$(rootpath %s)" % out
